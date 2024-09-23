@@ -1,20 +1,13 @@
 {
-  "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
-    }
-  ],
+  "build": {
+      "env": {
+          "GO_BUILD_FLAGS": "-ldflags '-s -w'"
+      }
+  },
   "routes": [
-    {
-      "src": "/save",
-      "methods": ["POST"],
-      "dest": "main.py"
-    },
-    {
-      "src": "/read",
-      "methods": ["GET"],
-      "dest": "main.py"
-    }
+      {
+          "src": "/.*",
+          "dest": "/api/hello.go"
+      }
   ]
 }
