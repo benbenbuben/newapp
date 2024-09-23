@@ -1,0 +1,20 @@
+{
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/save",
+      "methods": ["POST"],
+      "dest": "app.js"
+    },
+    {
+      "src": "/read",
+      "methods": ["GET"],
+      "dest": "app.js"
+    }
+  ]
+}
